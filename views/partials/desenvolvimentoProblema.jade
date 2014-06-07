@@ -1,0 +1,13 @@
+div.container(ng-controller='desenvCtrl', ng-init='iniciarConexao()')
+	div.row
+		div.col-sm-2
+			h4 Participantes
+			ul.list-group
+				li.list-group-item.list-group-item-success Admin
+				li.list-group-item.list-group-item-success Jhonatan
+				li.list-group-item.list-group-item-success Jesus
+		div.col-sm-10
+			div.row
+				div.col-sm-12.form-group
+					h4 Descrição do Problema
+					textarea.form-control(rows='4', ng-model='problema.descricao', ng-change='enivarDescricao()')

@@ -1,0 +1,21 @@
+div.container(ng-controller='problemaCtrl', ng-init='findAll()')
+	form(ng-submit='enviar()')
+		div.row
+			div.col-sm-12.form-group
+				textarea.form-control(rows='5', required, maxlenght='2000', ng-model='problema.descricao')
+		div.row
+			div.col-sm-2.col-sm-offset-10
+				input.form-control.btn.btn-primary(type='submit', value='Enviar')
+		hr
+		div.row
+			table.table.table-striped
+				thead
+					th.col-sm-6 Descrição
+					th.col-sm-4 Responsável
+					th.col-sm-2 Criado em
+				tbody
+					tr(ng-repeat='pro in problemas')
+						td
+							a(href='#/desenvProblema/{{pro._id}}' ) {{pro.descricao}}
+						td {{pro.responsavel}}
+						td {{pro.dataCriacao | date : 'dd/MM/yyyy'}}
